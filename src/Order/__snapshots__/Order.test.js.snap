@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order.js render snap with all 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      test
+    </span>
+    <span
+      id="date"
+    >
+      29 ноября, ср, 2000 год
+    </span>
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div
+      className="Order-item"
+      key="0"
+    >
+      aa
+    </div>
+    <div
+      className="Order-item"
+      key="1"
+    >
+      ss
+    </div>
+    <div
+      className="Order-item"
+      key="2"
+    >
+      dd
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Order.js without items 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Alihandro Express
+    </span>
+    <span
+      id="date"
+    >
+      29 ноября, ср, 2000 год
+    </span>
+  </div>
+  <div
+    className="Order-items"
+  />
+</div>
+`;
