@@ -16,47 +16,14 @@ describe('sortByItemCount function', () => {
 		expect(result).toBe(0);
 	})
 
-	it('same items count', () => {
-		const order1 = {
-			items: ['item1', 'item2'],
-		};
-
-		const order2 = {
-			items: ['1', '2'],
-		};
-
+	test.each([ 
+		[{items: ['item1', 'item2']}, {items: ['1', '2']}, 0],
+		[{items: ['item1', 'item2']}, {items: ['1']}, 1], 
+		[{items: ['item1']}, {items: ['1', '2']}, -1], 
+	])('valid args', (order1, order2, expected) => {
 		const result = sortByItemCount(order1, order2);
-
-		expect(result).toBe(0);
-	});
-
-	it('order 1 > order 2', () => {
-		const order1 = {
-			items: ['item1', 'item2'],
-		};
-
-		const order2 = {
-			items: ['1'],
-		};
-
-		const result = sortByItemCount(order1, order2);
-
-		expect(result).toBe(1);
-	});
-
-	it('order 1 < order 2', () => {
-		const order1 = {
-			items: ['item1'],
-		};
-
-		const order2 = {
-			items: ['1', '2'],
-		};
-
-		const result = sortByItemCount(order1, order2);
-
-		expect(result).toBe(-1);
-	});
+		expect(result).toBe(expected);
+	})
 });
 
 describe('sortByDate function', () => {
@@ -74,47 +41,14 @@ describe('sortByDate function', () => {
 		expect(result).toBe(0);
 	})
 
-	it('same date count', () => {
-		const order1 = {
-			date: 1544356800000,
-		};
-
-		const order2 = {
-			date: 1544356800000,
-		};
-
+	test.each([ 
+		[{date: 1544356800000}, {date: 1544356800000}, 0],
+		[{date: 1544356800000}, {date: 1544356800001}, 1], 
+		[{date: 1544356800001}, {date: 1544356800000}, -1], 
+	])('valid args', (order1, order2, expected) => {
 		const result = sortByDate(order1, order2);
-
-		expect(result).toBe(0);
-	});
-
-	it('order 1 older then order 2', () => {
-		const order1 = {
-			date: 1544356800001,
-		};
-
-		const order2 = {
-			date: 1544356800000,
-		};
-
-		const result = sortByDate(order1, order2);
-
-		expect(result).toBe(-1);
-	});
-
-	it('order 2 older then order 1', () => {
-		const order1 = {
-			date: 1544356800000,
-		};
-
-		const order2 = {
-			date: 1544356800001,
-		};
-
-		const result = sortByDate(order1, order2);
-
-		expect(result).toBe(1);
-	});
+		expect(result).toBe(expected);
+	})
 });
 
 describe('sortOrders function', () => {
