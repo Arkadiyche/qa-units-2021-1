@@ -32,20 +32,6 @@ describe('Order.js', () => {
     expect(wrapper.getElement()).toBeNull();
   });
 
-  it('without date', () => {
-    let order = Object.assign({}, fakeOrders[0]);
-    delete order.date;
-    const wrapper = shallow(<Order order={order}/>);
-    expect(wrapper.getElement()).toBeNull();
-  });
-
-  it('without shop', () => {
-    let order = Object.assign({}, fakeOrders[0]);
-    delete order.shop;
-    const wrapper = shallow(<Order order={order}/>);
-    expect(wrapper.getElement()).toBeNull();
-  });
-
   it('without items', () => {
     let order = Object.assign({}, fakeOrders[0]);
     delete order.items;
