@@ -42,27 +42,3 @@ exports[`Order.js with all params 1`] = `
   </div>
 </div>
 `;
-
-exports[`Order.js without items 1`] = `
-<div
-  className="Order"
->
-  <div
-    className="Order-header"
-  >
-    <span
-      className="Order-shop"
-    >
-      Alihandro Express
-    </span>
-    <span
-      id="date"
-    >
-      29 ноября, ср, 2000 год
-    </span>
-  </div>
-  <div
-    className="Order-items"
-  />
-</div>
-`;

@@ -9,11 +9,9 @@ import {fakeOrders} from "../data/fakeOrders";
 
 configure({adapter: new Adapter()});
 
-getDate.mockReturnValue("29 ноября, ср, 2000 год");
-
 describe('Order.js', () => {
   beforeEach(() => {
-    jest.resetModules();
+    getDate.mockReturnValue("29 ноября, ср, 2000 год");
   });
   afterAll(() => {
     jest.resetModules();
@@ -36,7 +34,7 @@ describe('Order.js', () => {
     let order = Object.assign({}, fakeOrders[0]);
     delete order.items;
     const wrapper = shallow(<Order order={order}/>);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toEqual({});
   });
 
   it('with all params', () => {
